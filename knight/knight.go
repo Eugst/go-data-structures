@@ -16,7 +16,7 @@ type Board struct {
 	path_len int
 }
 
-type Distanation struct {
+type Destination struct {
 	x int
 	y int
 }
@@ -102,7 +102,7 @@ func hashMove(x, y int) int {
 	return (x+y)*(x+y+1)/2 + y
 }
 
-func (k *Knight) chooseMove(d *Distanation, b *Board) {
+func (k *Knight) chooseMove(d *Destination, b *Board) {
 	if d.x > k.x {
 		if d.y > k.y {
 			if (d.x - k.x) > (d.y - k.y) {
@@ -142,7 +142,7 @@ func (k *Knight) chooseMove(d *Distanation, b *Board) {
 	}
 }
 
-func (k *Knight) moveTo(d *Distanation, b *Board) int {
+func (k *Knight) moveTo(d *Destination, b *Board) int {
 	if d.x == k.x && d.y == k.y {
 		return 0
 	}
@@ -158,7 +158,7 @@ func (k *Knight) moveTo(d *Distanation, b *Board) int {
 
 func main() {
 	var k Knight
-	var d Distanation
+	var d Destination
 	var b Board
 	k.x = 1
 	k.y = 1
